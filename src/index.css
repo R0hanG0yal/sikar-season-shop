@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-emerald-deep: #043828;
+    --color-emerald-main: #064E3B;
+    --color-emerald-light: #0D7A57;
+    --color-saffron-main: #FF7722;
+    --color-saffron-deep: #D95305;
+    --color-saffron-light: #F59E0B;
+    --color-beige-base: #FAF7F2;
+    --color-beige-warm: #F4EFE6;
+    --color-beige-border: #E8DFC8;
+    --color-beige-card: #FFFFFF;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-beige-base);
+    color: #1F2937;
+  }
+
+  h1, h2, h3, .font-serif-brand {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom Utilities */
+.bg-beige-base { background-color: #FAF7F2; }
+.bg-beige-warm { background-color: #F4EFE6; }
+.bg-beige-muted { background-color: #EFE8DC; }
+.border-beige { border-color: #E8DFC8; }
+
+.bg-emerald-royal { background-color: #064E3B; }
+.bg-emerald-deep { background-color: #033626; }
+.text-emerald-royal { color: #064E3B; }
+.border-emerald-royal { border-color: #064E3B; }
+
+.bg-saffron-royal { background-color: #FF7722; }
+.bg-saffron-deep { background-color: #D95305; }
+.text-saffron-royal { color: #FF7722; }
+.text-saffron-deep { color: #D95305; }
+.border-saffron-royal { border-color: #FF7722; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EFE6;
+}
+::-webkit-scrollbar-thumb {
+  background: #0D7A57;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #064E3B;
+}
+
+/* Print Stylesheet for DMart / Vishal Mega Mart Thermal Receipts & Tax Invoices */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .printable-receipt, .printable-receipt * {
+    visibility: visible;
+  }
+  .printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
